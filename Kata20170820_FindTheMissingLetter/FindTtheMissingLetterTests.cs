@@ -43,15 +43,7 @@ namespace Kata20170820_FindTheMissingLetter
     {
         public char FindMissingLetter(char[] array)
         {
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i + 1] - array[i] > 1)
-                {
-                    return Convert.ToChar(array[i] + 1);
-                }
-            }
-
-            return ' ';
+            return (char)Enumerable.Range(array[0], 25).FirstOrDefault(a => !array.Contains((char) a));
         }
     }
 }
