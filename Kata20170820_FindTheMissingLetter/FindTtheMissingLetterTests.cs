@@ -43,19 +43,15 @@ namespace Kata20170820_FindTheMissingLetter
     {
         public char FindMissingLetter(char[] array)
         {
-            var firstAsc2 = Convert.ToInt32(array[0]);
-
-            for (int i = 1; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if (Convert.ToInt32(array[i]) - firstAsc2 > 1)
+                if (array[i + 1] - array[i] > 1)
                 {
-                    return Convert.ToChar(firstAsc2 + 1);
+                    return Convert.ToChar(array[i] + 1);
                 }
-
-                firstAsc2++;
             }
 
-            return 'a';
+            return ' ';
         }
     }
 }
