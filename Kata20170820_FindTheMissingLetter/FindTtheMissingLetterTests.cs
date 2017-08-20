@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Kata20170820_FindTheMissingLetter
 {
     [TestClass]
-    public class UnitTest1
+    public class FindTtheMissingLetterTests
     {
         [TestMethod]
         public void TestMethod1()
