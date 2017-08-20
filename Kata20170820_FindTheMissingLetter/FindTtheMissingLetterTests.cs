@@ -19,6 +19,18 @@ namespace Kata20170820_FindTheMissingLetter
             FindMissingLetterShouldBe('c', new[] { 'b', 'd' });
         }
 
+        [TestMethod]
+        public void input_a_should_return_b()
+        {
+            FindMissingLetterShouldBe('e', new[] { 'a', 'b', 'c', 'd', 'f' });
+        }
+
+        [TestMethod]
+        public void input_A_should_return_b()
+        {
+            FindMissingLetterShouldBe('P', new[] { 'O', 'Q', 'R', 'S' });
+        }
+
         private static void FindMissingLetterShouldBe(char expected, char[] array)
         {
             var kata = new Kata();
@@ -35,7 +47,7 @@ namespace Kata20170820_FindTheMissingLetter
 
             for (int i = 1; i < array.Length; i++)
             {
-                if (firstAsc2 - Convert.ToInt32(array[i]) < 0)
+                if (Convert.ToInt32(array[i]) - firstAsc2 > 1)
                 {
                     return Convert.ToChar(firstAsc2 + 1);
                 }
