@@ -7,8 +7,24 @@ namespace Kata20170820_FindTheMissingLetter
     public class FindTtheMissingLetterTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void input_a_c_should_return_b()
         {
+            FindMissingLetterShouldBe('b', new[] {'a', 'c'});
+        }
+
+        private static void FindMissingLetterShouldBe(char expected, char[] array)
+        {
+            var kata = new Kata();
+            var actual = kata.FindMissingLetter(array);
+            Assert.AreEqual(expected, actual);
+        }
+    }
+
+    public class Kata
+    {
+        public char FindMissingLetter(char[] array)
+        {
+            return 'b';
         }
     }
 }
